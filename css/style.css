@@ -7,20 +7,56 @@ body {
     font-family: fantasy;
 }
 
-.guide {
-    font-size: 16px;
-    margin: 10px 0;
+/* 全体レイアウト */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 画面中央 */
 }
 
-/*
-canvas {
+body {
+    margin: 0;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    font-family: fantasy;
+
+    background: radial-gradient(circle at 50% 30%, #1a237e, #000000 80%);
+}
+
+#gameCanvas {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* キャンバス */
+#gameCanvas {
+    display: block;
+    border: 2px solid rgb(18, 28, 47);
+
+    /* 背景画像（必要なら有効化） */
     background: url('../images/earth.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: block;
-    margin: 20px auto;
 }
-*/
+
+/* 操作説明 */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.controls p {
+    margin: 0;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.05);
+}
 
 

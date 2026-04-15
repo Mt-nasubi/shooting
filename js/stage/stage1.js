@@ -36,7 +36,7 @@ export function stage1(elapsed, canvas) {
     spawnAlien(200, 0, 8900, elapsed);
     spawnAlien(100, 0, 9200, elapsed);
 
-    spawnHealItem(center - 120, 0, 10, 9800, elapsed);
+    spawnHealItem(center - 120, 0, 1, 9800, elapsed);
     spawnAddItem(center + 120, 0, 10, 10100, elapsed);
 
     spawnUfo(center - 250, 0, 10800, elapsed);
@@ -59,7 +59,7 @@ export function stage1(elapsed, canvas) {
     spawnAlien(center - 50, 0, 13600, elapsed);
     spawnAlien(center + 50, 0, 13600, elapsed);
 
-    spawnHealItem(center, 0, 14300, elapsed);
+    spawnHealItem(center, 0, 1, 14300, elapsed);
 
     spawnUfo(center - 300, 0, 15000, elapsed);
     spawnUfo(center + 300, 0, 15000, elapsed);
@@ -71,7 +71,7 @@ export function stage1(elapsed, canvas) {
     spawnUfo(center - 100, 0, 16000, elapsed);
     spawnUfo(center + 100, 0, 16000, elapsed);
 
-    spawnAddItem(center - 180, 0, 16600, elapsed);
+    spawnAddItem(center - 180, 0, 10, 16600, elapsed);
 
     spawnAlien(center - 400, 0, 17200, elapsed);
     spawnAlien(center - 250, 0, 17200, elapsed);

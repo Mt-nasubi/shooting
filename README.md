@@ -4,17 +4,18 @@
 HTML / JavaScript / CSS を用いて作成したブラウザ向けシューティングゲームです。  
 プレイヤーは戦闘機を操作し、敵を倒しながらスコアを伸ばします。
 
-弾数制限やアイテムを導入し、単純な連射だけでなく、状況判断が必要になるよう設計しています。
-
 ---
 
 ## スクリーンショット
 
-### ゲーム画面
+### タイトル画面
 ![gameplay](./images/screenshot1.png)
 
+### ゲーム画面
+![gameplay](./images/screenshot2.png)
+
 ### ゲームオーバー画面
-![gameover](./images/screenshot2.png)
+![gameover](./images/screenshot3.png)
 
 ---
 

@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8" />
-    <title>スペースシューティング</title>
+    <meta charset="UTF-8">
+    <title>Space Shootiong</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <canvas id="gameCanvas" width="1000" height="600"></canvas>
+    <div class="container">
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+        <div class="controls">
+            <p>「↑」「↓」「←」「→」 : 移動</p>
+            <p>「Space」 : 弾発射</p>
+            <p>「Q」: タイトルに戻る</p>
+        </div>
+    </div>
+
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
