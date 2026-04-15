@@ -10,6 +10,8 @@ function resetGame() {
     lastShotTime = performance.now();  // 発射間隔をリセットして即発射を防ぐ
     mainBgm.play();
     mainBgm.volume = 0.2;
+    startTime = performance.now();
+    spawnedKeys.clear();
     player.hp = player.maxHp;
     player.stock = 10;
     score = 0;
@@ -26,6 +28,44 @@ function resetGame() {
         intervalId = null;
     }
 }
+
+// スタート画面に戻る
+function backToStart() {
+    gameStarted = false;
+    gameOver = false;
+    enemiesSpawned = false;
+    alienSpawned = false;
+    ufoSpawned = false;
+    gameOverSoundPlayed = false;
+
+    startTime = 0;
+    bgY = 0;
+    lastShotTime = 0;
+    score = 0;
+
+    mainBgm.pause();
+    mainBgm.currentTime = 0;
+    spawnedKeys.clear();
+
+    enemies.length = 0;
+    healItems.length = 0;
+    addItems.length = 0;
+    playerAttacks.length = 0;
+    enemyAttacks.length = 0;
+
+    player.hp = player.maxHp;
+    player.stock = 10;
+
+    player.x = canvas.width / 2 - player.width / 2;
+    player.y = canvas.height - player.height - 10;
+
+    if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+}
+
+
 
 // 背景スクロール
 function drawBackground(ctx, canvas) {

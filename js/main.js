@@ -25,13 +25,15 @@ let score = 0;
 
 // キャラクター変数・配列
 const player = new Player(canvas.width / 2 - 20, canvas.height - 70, 8);
+let startTime = 0;
 let enemies = [];
 let playerAttacks = [];
 let enemyAttacks = [];
 let healItems = [];
 let addItems = [];
 
-
+// 敵の記録セット(重複無しリスト)
+let spawnedKeys = new Set();
 
 // メインゲームループ
 function gameLoop(timestamp) {
@@ -51,13 +53,8 @@ function gameLoop(timestamp) {
         return;
     }
 
-    // 敵生成開始
-    /*
-    if (gameStarted && !enemiesSpawned) {
-        intervalId = setInterval(spawnEnemyRandom, 500);
-        enemiesSpawned = true;
-    }*/
-    stage1(timestamp);
+    const elapsed = timestamp - startTime;
+    stage1(elapsed);
 
 
     // ゲームオーバー画面

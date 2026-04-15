@@ -20,17 +20,7 @@ document.addEventListener('keydown', e => {
 
     // Qキーで終了（ゲーム停止と初期化）
     if (e.code === 'KeyQ') {
-        gameStarted = false;
-        gameOver = false;
-        mainBgm.pause();
-        mainBgm.currentTime = 0;
-        enemies.length = 0;
-        healItems.length = 0;
-        addItems.length = 0;
-        playerAttacks.length = 0;
-        enemyAttacks.length = 0;
-        player.hp = 3;
-        player.stock = 10;
+        backToStart();
     }
 });
 
