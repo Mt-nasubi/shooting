@@ -1,5 +1,4 @@
-// effect.js
-
+// js/render/effect.js
 
 const explosions = [];
 

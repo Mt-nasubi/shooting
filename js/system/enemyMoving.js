@@ -4,13 +4,13 @@
 
 // ---敵移動---
 // まっすぐ下に移動
-function moveStraight(enemy) {
+export function moveStraight(enemy) {
     enemy.y += enemy.speed;
 }
 
 
 // 左右ジグザグしながら下に移動（基準点 baseX, 角度 angle を使用）
-function moveZig(enemy) {
+export function moveZig(enemy) {
     const amplitude = 40;    // 横の最大振れ幅（px）
     const frequency = 0.06;  // 振動の速さ（角度の増分）
 
@@ -30,7 +30,7 @@ function moveZig(enemy) {
 
 
 // 円運動しながら下に移動（baseX, baseY, angle を使用）
-function moveCircle(enemy) {
+export function moveCircle(enemy) {
     // 基準点（円運動の中心）を enemy.baseX, enemy.baseY に保持している想定
     if (enemy.baseX === undefined) enemy.baseX = enemy.x;
     if (enemy.baseY === undefined) enemy.baseY = enemy.y;

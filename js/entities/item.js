@@ -1,11 +1,12 @@
 // item.js 
+import { healImg, addImg } from "../assets/image.js";
 
-class HealItem {
+export class HealItem {
     constructor(x, y, healpoints, speed) {
         this.x = x;
         this.y = y;
         this.healpoints = healpoints;
-        this.speed = speed || 10;
+        this.speed = speed || 5;
         this.width = 68;
         this.height = 32;
     }
@@ -19,16 +20,16 @@ class HealItem {
         ctx.fillStyle = 'white';
         ctx.font = '24px `DotGothic16`';
         ctx.textAlign = 'center'; 
-        ctx.fillText(`+${this.healpoints}`, this.x + this.width / 2, this.y + this.height / 2);
+        ctx.fillText(`+${this.healpoints}`, this.x + this.width / 2, this.y + this.height / 2 + 8);
     }
 }
 
-class AddItem {
+export class AddItem {
     constructor(x, y, addpoints, speed) {
         this.x = x;
         this.y = y;
         this.addpoints = addpoints;        
-        this.speed = speed || 10;
+        this.speed = speed || 5;
         this.width = 68;
         this.height = 32;
     }
@@ -42,6 +43,6 @@ class AddItem {
         ctx.fillStyle = 'white';
         ctx.font = '24px `DotGothic16`';
         ctx.textAlign = 'center'; 
-        ctx.fillText(`+${this.addpoints}`, this.x + this.width / 2, this.y + this.height / 2);
+        ctx.fillText(`+${this.addpoints}`, this.x + this.width / 2, this.y + this.height / 2 + 8);
     }
 }

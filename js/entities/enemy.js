@@ -1,6 +1,12 @@
-// enemy.js
+// js/entities/enemy.js
 
-// enemyクラス
+import { moveStraight, moveZig, moveCircle } from "../system/enemyMoving.js";
+import { attackRush, attackLasers } from "../entities/enemyAttacks.js";
+import { playerDetection } from "../system/util.js";
+import { alienImg, ufoImg, explosionFrames } from "../assets/image.js";
+
+
+// ===== 親クラス =====
 class Enemy {
     constructor(x, y, hp, speed, movingType, points) {
         this.x = x;
@@ -16,7 +22,7 @@ class Enemy {
         this.isAttacking = false;
         this.isFirstDetected = false;
 
-        // 爆発アニメ用
+        // 爆発
         this.isDead = false;
         this.explosionFrame = 0;
         this.explosionMaxFrame = 2;
@@ -26,15 +32,14 @@ class Enemy {
 
     update() {
         if (this.isDead) {
-            // 爆発アニメ更新
             this.explosionCounter++;
             if (this.explosionCounter % this.explosionFrameInterval === 0) {
                 this.explosionFrame++;
             }
         } else if (this.isAttacking) {
-            this.attack();   // 攻撃中は攻撃のみ
+            this.attack();
         } else {
-            this.move();     // 通常移動
+            this.move();
         }
     }
 
@@ -46,23 +51,20 @@ class Enemy {
         }
     }
 
-    // サブクラスで override する想定
     attack() {}
 
     draw(ctx) {
-        const frame = this.explosionFrame % frames.length;
-        const frameData = frames[frame];
         if (this.isDead) {
-            // 爆発アニメ描画
-        ctx.drawImage(
-            frameData.img,
-            frameData.sx, frameData.sy,
-            frameData.sw, frameData.sh,
-            this.x - 32, this.y - 32,
-            64, 64
-        );
-        } else {
-            // 何もしない（サブクラスで描画する）
+            const frame = this.explosionFrame % explosionFrames.length;
+            const frameData = explosionFrames[frame];
+
+            ctx.drawImage(
+                frameData.img,
+                frameData.sx, frameData.sy,
+                frameData.sw, frameData.sh,
+                this.x - 32, this.y - 32,
+                64, 64
+            );
         }
     }
 
@@ -71,10 +73,11 @@ class Enemy {
     }
 }
 
-// エイリアン
-class Alien extends Enemy {
+
+// ===== エイリアン =====
+export class Alien extends Enemy {
     constructor(x, y) {
-        super(x, y, 1, 4, 0, 100);
+        super(x, y, 1, 4, 0, 1000);
         this.width = 40;
         this.height = 24;
     }
@@ -103,10 +106,11 @@ class Alien extends Enemy {
     }
 }
 
-// UFO
-class Ufo extends Enemy {
+
+// ===== UFO =====
+export class Ufo extends Enemy {
     constructor(x, y) {
-        super(x, y, 2, 5, 1, 300);
+        super(x, y, 2, 5, 1, 3000);
         this.width = 40;
         this.height = 24;
     }

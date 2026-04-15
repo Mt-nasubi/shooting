@@ -1,6 +1,10 @@
-// enemyAttack.js
+// enemyAttacks.js
 
-
+import { playerDetection } from "../system/util.js";
+import { enemyAttacks } from "../core/gameState.js";
+import { laserImg } from "../assets/image.js";
+import { isOutOfCanvas } from "../render/background.js";
+import { canvas } from "../main.js";
 
 // ---クラス---
 class EnemyAttack {
@@ -42,7 +46,7 @@ function addEnemyAttacks(enemy) {
 
 // ---敵攻撃---
 // 突進
-function attackRush(enemy) {
+export function attackRush(enemy, canvas) {
     // 一度だけ突進方向を決める処理
     const detection = playerDetection(enemy, 250, 250);
     if (!enemy.isFirstDetected && detection) {
@@ -67,13 +71,12 @@ function attackRush(enemy) {
 
     // 画面外に出たら突進終了
     if (isOutOfCanvas(enemy)) {
-        enemy.isDead = true;
         enemy.isFirstDetected = false;  // 突進情報リセット
     }
 }
 
 // レーザー
-function attackLasers(enemy) {
+export function attackLasers(enemy) {
     if (enemy.laserCooldown === undefined) {
         enemy.laserCooldown = 0;
     }

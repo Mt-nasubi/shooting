@@ -1,19 +1,19 @@
-// sound.js
+// js/assets/sound.js
 
 // ---BGM---
-// メインbgm
-const mainBgm = new Audio('sounds/maou_bgm_cyber41.mp3');
-mainBgm.loop = true;       // ループ再生
-mainBgm.volume = 0.2;      // 音量（0.0〜1.0）
-
+// ゲームbgm
+export const gameBgm1 = new Audio('sounds/maou_bgm_cyber41.mp3');
+gameBgm1.loop = true;
+gameBgm1.volume = 0.2;
 
 // ---エフェクト音---
 // ゲームオーバー
-const gameOverSound = new Audio('sounds/mixkit-arcade-retro-game-over-213.wav');
+export const gameOverSound = new Audio('sounds/mixkit-arcade-retro-game-over-213.wav');
 gameOverSound.volume = 0.2;
 
-// ---エフェクト音---(プール処理付き)
-const maxSounds = 5;  // 同時に鳴らせる最大数
+// ---エフェクト音（プール処理付き）---
+const maxSounds = 5;
+
 // 弾発射
 const bulletSounds = [];
 let bulletSoundIndex = 0;
@@ -24,9 +24,9 @@ for (let i = 0; i < maxSounds; i++) {
     bulletSounds.push(bs);
 }
 
-function playBulletSound() {
+export function playBulletSound() {
     const bs = bulletSounds[bulletSoundIndex];
-    bs.currentTime = 0;  // 再生位置を先頭に戻す
+    bs.currentTime = 0;
     bs.play();
     bulletSoundIndex = (bulletSoundIndex + 1) % maxSounds;
 }
@@ -41,9 +41,9 @@ for (let i = 0; i < maxSounds; i++) {
     downSounds.push(ds);
 }
 
-function playDownSound() {
+export function playDownSound() {
     const ds = downSounds[downSoundIndex];
-    ds.currentTime = 0;  // 再生位置を先頭に戻す
+    ds.currentTime = 0;
     ds.play();
     downSoundIndex = (downSoundIndex + 1) % maxSounds;
 }

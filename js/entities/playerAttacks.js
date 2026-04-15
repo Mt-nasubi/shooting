@@ -1,10 +1,10 @@
-// playerAttack.js
+// js/entities/playerAttacks.js
 
-
-
+import { playerAttacks } from "../core/gameState.js";
+import { bulletImg, laserImg, bombImg } from "../assets/image.js";
+import { canvas } from "../main.js"; 
 
 // ---クラス---
-// 銃弾
 class Bullet {
     constructor(x, y, speed) {
         this.x = x;
@@ -24,7 +24,6 @@ class Bullet {
     }
 }
 
-// レーザー
 class Laser {
     constructor(x, y) {
         this.x = x;
@@ -63,21 +62,19 @@ class Laser {
     }
 }
 
-// 爆弾
 class Bomb {
     constructor(x, y) {
         this.x = x;
         this.y = y;
         this.width = 18;
         this.height = 18;
-        this.vy = -6; // 投げて上に行くイメージ（必要なら変える）
+        this.vy = -6;
         this.isDead = false;
     }
 
     update() {
-        // 簡易：上に飛んで落ちる (重力可)
         this.y += this.vy;
-        this.vy += 0.3; // gravity
+        this.vy += 0.3;
         if (this.y > canvas.height) this.isDead = true;
     }
 
@@ -86,8 +83,7 @@ class Bomb {
     }
 }
 
-
-// 配列追加処理
+// ---追加---
 function addBullet(x, y, speed) {
     playerAttacks.push(new Bullet(x, y, speed));
 }
@@ -100,16 +96,15 @@ function addBomb(x, y) {
     playerAttacks.push(new Bomb(x, y));
 }
 
-
-// 発射
-function shootBullets(player) {
-    addBullet(player.x + player.width / 2 - 5, player.y, 12);
+// ---発射（export）---
+export function shootBullets(player) {
+    addBullet(player.x + player.width / 2 - 5, player.y, 12); 
 }
 
-function shootLasers(player) {
+export function shootLasers(player) {
     addLaser(player.x + player.width / 2 - 10, player.y);
 }
 
-function shootBombs(player) {
+export function shootBombs(player) {
     addBomb(player.x + player.width / 2 - 10, player.y);
 }
