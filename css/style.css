@@ -1,0 +1,26 @@
+body {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    color: rgb(18, 28, 47);
+    text-align: center;
+    font-family: fantasy;
+}
+
+.guide {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/*
+canvas {
+    background: url('../images/earth.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 20px auto;
+}
+*/
+
+

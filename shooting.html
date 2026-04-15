@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>スペースシューティング</title>
+
+    <!---download font--->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <!-- src -->
+    <script src="js/keyboard.js" defer></script>
+    <script src="js/image.js" defer></script>
+    <script src="js/sound.js" defer></script>   
+    <script src="js/func.js" defer></script>
+    <script src="js/player.js" defer></script>
+    <script src="js/enemy.js" defer></script>
+    <script src="js/playerAttack.js" defer></script>
+    <script src="js/enemyAttack.js" defer></script>
+    <script src="js/enemyMoving.js" defer></script>
+    <script src="js/spawn.js" defer></script>
+    <script src="js/item.js" defer></script>
+
+    <!-- stage -->
+    <script src="js/stage/stage1.js" defer></script>    
+
+    <!-- main -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <h1>Space Shooting</h1>
+
+    <!-- 操作説明 -->
+    <div id="instructions" class="guide">
+        ← → ↑ ↓ キーで移動、スペースキーで弾を撃つ
+    </div>
+
+    <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+    <div class="guide">
+        [q] で終了
+    </div>
+
+</body>
+</html>
