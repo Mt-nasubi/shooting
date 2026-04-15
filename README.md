@@ -77,7 +77,7 @@ shooting/
 │ ├── scene/ # シーン管理
 │ ├── system/ # 衝突・更新・スポーン
 │ └── stage/ # ステージ定義
-├── CSS/
+├── css/
 ├── sounds/
 └── index.html
 ```
