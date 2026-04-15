@@ -66,7 +66,9 @@ HTML / CSS / JavaScript
 ---
 
 </> Markdown
+```md
 ## ディレクトリ構成
+```
 shooting/
 ├── js/
 │ ├── assets/ # 画像・音声素材
@@ -79,14 +81,17 @@ shooting/
 ├── CSS/
 ├── sounds/
 └── index.html
+```
+```
+
 ---
-##
 
 ## 起動方法
 
-1. githubからクローン
+### 1. クローン
 ```bash
 git clone https://github.com/Mt-nasubi/shooting.git
 cd shooting
-2. index.htmlを開く
-VSCode の Live Server を使用
+```
+### 2. index.htmlを開く
+VSCode の Live Server を使用する
