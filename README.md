@@ -66,7 +66,6 @@ HTML / CSS / JavaScript
 ---
 
 </> Markdown
-```md
 ## ディレクトリ構成
 ```
 shooting/
@@ -81,7 +80,6 @@ shooting/
 ├── CSS/
 ├── sounds/
 └── index.html
-```
 ```
 
 ---
