@@ -79,14 +79,14 @@ shooting/
 ├── CSS/
 ├── sounds/
 └── index.html
-
 ---
+##
 
 ## 起動方法
+
 1. githubからクローン
 ```bash
 git clone https://github.com/Mt-nasubi/shooting.git
 cd shooting
-
 2. index.htmlを開く
 VSCode の Live Server を使用
